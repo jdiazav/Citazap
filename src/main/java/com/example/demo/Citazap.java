@@ -12,11 +12,9 @@ import org.springframework.web.bind.annotation.RestController;
 @SpringBootApplication
 @RestController
 public class Citazap{
-
     public static void main(String[] args) {
         SpringApplication.run(Citazap.class, args);
     }
-
     @GetMapping("/")
     public String apiRoot() {
         return "Bienvenido a Citazap";
