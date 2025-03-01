@@ -1,32 +1,27 @@
 package com.example.demo.model;
 
 
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.data.annotation.Id;
 
+//Lombok Getter y Setter simplifica el codigo
+@Setter
+@Getter
 public class Cliente {
+    //Getters y Setters
     @Id
-    private String id;
-    private String nombre;
-    private String email;
-    private String telefono;
+    private String id; // ID del cliente (cambiar por ObjectID)
+    private String nombre; // Nombre del cliente
+    private String email; // Email del cliente
+    private String telefono; // Telefono del cliente
 
+    //Constructor vacio y con 3 paramatros (ID se pone arbitrariamente)
     public Cliente() {}
-
     public Cliente(String nombre, String email, String telefono) {
         this.nombre = nombre;
         this.email = email;
         this.telefono = telefono;
     }
 
-    public String getId() { return id; }
-    public void setId(String id) { this.id = id; }
-
-    public String getNombre() { return nombre; }
-    public void setNombre(String nombre) { this.nombre = nombre; }
-
-    public String getEmail() { return email; }
-    public void setEmail(String email) { this.email = email; }
-
-    public String getTelefono() { return telefono; }
-    public void setTelefono(String telefono) { this.telefono = telefono; }
 }

@@ -1,8 +1,14 @@
 package com.example.demo.model;
 
+import lombok.Getter;
+import lombok.Setter;
 import org.springframework.data.annotation.Id;
 
+//Lombok Getter y Setter simplifica el codigo
+@Setter
+@Getter
 public abstract class User {
+    // Vease que User es una clase abstracta
     @Id
     private String id;
     private String nombre;
@@ -15,13 +21,4 @@ public abstract class User {
         this.email = email;
     }
 
-    // Getters y Setters
-    public String getId() { return id; }
-    public void setId(String id) { this.id = id; }
-
-    public String getNombre() { return nombre; }
-    public void setNombre(String nombre) { this.nombre = nombre; }
-
-    public String getEmail() { return email; }
-    public void setEmail(String email) { this.email = email; }
 }

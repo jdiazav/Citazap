@@ -12,15 +12,17 @@ import java.util.Optional;
 public class UsuarioService {
     @Autowired
     private UserRepository userRepository;
-
+    /*Se obtienen los usuario por ID (util para administradores)*/
     public Optional<Usuario> obtenerPorId(String id) {
         return userRepository.findById(id).map(u -> (Usuario) u);
     }
 
+    /*Se crea un usuario*/
     public Usuario crearUsuario(Usuario usuario) {
         return userRepository.save(usuario);
     }
 
+    /*Se cre y agrega un cliente a un usuario*/
     public Usuario agregarCliente(String usuarioId, Cliente nuevoCliente) {
         return userRepository.findById(usuarioId)
                 .map(u -> {
@@ -30,6 +32,7 @@ public class UsuarioService {
                 }).orElse(null);
     }
 
+    /*Se elimina un cliente de un usuario*/
     public Usuario eliminarCliente(String usuarioId, String clienteId) {
         return userRepository.findById(usuarioId)
                 .map(u -> {

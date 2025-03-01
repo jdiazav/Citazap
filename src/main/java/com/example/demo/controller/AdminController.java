@@ -9,11 +9,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/admins")
+@RequestMapping("/admins") //los metodos de los administradores se ponen en la direccion admins
 public class AdminController {
     @Autowired
     private AdminService adminService;
-
+    /*Metodo para crear admins */
     @PostMapping
     public Admin crearAdmin(@RequestBody Admin admin) {
         return adminService.crearAdmin(admin);
