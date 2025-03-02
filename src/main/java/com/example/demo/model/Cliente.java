@@ -1,27 +1,41 @@
 package com.example.demo.model;
 
 
+
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
 import lombok.Getter;
 import lombok.Setter;
+import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 
-//Lombok Getter y Setter simplifica el codigo
+//Lombok Getters y Setters
 @Setter
 @Getter
 public class Cliente {
-    //Getters y Setters
+    //Atributos de cliente
     @Id
-    private String id; // ID del cliente (cambiar por ObjectID)
-    private String nombre; // Nombre del cliente
-    private String email; // Email del cliente
-    private String telefono; // Telefono del cliente
+    @JsonSerialize(using = ToStringSerializer.class)
+    private ObjectId id;
+    private String nombre;
+    private String email;
+    private String telefono;
 
-    //Constructor vacio y con 3 paramatros (ID se pone arbitrariamente)
-    public Cliente() {}
-    public Cliente(String nombre, String email, String telefono) {
+    //Metodos contructores
+    public Cliente(ObjectId id, String nombre, String email, String telefono) {
+        this.id = id;
         this.nombre = nombre;
         this.email = email;
         this.telefono = telefono;
     }
+
+    public Cliente(String nombre, String telefono) {
+        this.nombre = nombre;
+        this.telefono = telefono;
+    }
+    public Cliente(String nombre){
+        this.nombre = nombre;
+    }
+    public Cliente(){}
 
 }

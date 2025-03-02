@@ -4,22 +4,23 @@ import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.ArrayList;
 import java.util.List;
-//Lombok Getter y Setter simplifica el codigo
+//Lombok Getters y Setters
 @Setter
 @Getter
-@Document(collection = "User") // Se almacena junto con Admin
+@Document(collection = "User")
 public class Usuario extends User {
-    // Getters y Setters
-    private List<Cita> agenda;
-    private List<Cliente> clientes;
+    private List<Cita> agenda = new ArrayList<>();
+    private List<Cliente> clientes = new ArrayList<>();
 
-    public Usuario() {}
+    //constructor inicial
 
+    public Usuario() {
+    }
     public Usuario(String nombre, String email, List<Cita> agenda, List<Cliente> clientes) {
         super(nombre, email);
-        this.agenda = agenda;
-        this.clientes = clientes;
+        this.agenda = new ArrayList<>();
+        this.clientes = new ArrayList<>();
     }
-
 }

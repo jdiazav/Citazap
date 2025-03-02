@@ -1,0 +1,93 @@
+/* Estilo General */
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f4f4f4;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* Contenedor del formulario */
+.form-container {
+    background: white;
+    padding: 30px;
+    width: 400px;
+    margin: 50px auto;
+    border-radius: 10px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Pasos del formulario */
+.step-indicator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.step {
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    border-radius: 50%;
+    background-color: #d3d3d3;
+    color: white;
+    font-weight: bold;
+    margin: 0 10px;
+    text-align: center;
+}
+
+.step.active {
+    background-color: #3f51b5;
+    border: 3px solid #aab5ff;
+}
+
+/* Estilo de los campos */
+label {
+    display: block;
+    text-align: left;
+    font-weight: bold;
+    margin: 10px 0 5px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+/* Botones */
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+button {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button.primary {
+    background-color: #3f51b5;
+    color: white;
+}
+
+button.secondary {
+    background-color: white;
+    color: #3f51b5;
+    border: 2px solid #3f51b5;
+}
+
+button.secondary:hover {
+    background-color: #e0e0e0;
+}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nuevo Cliente</title>
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="stylesheet" th:href="@{/css/styles.css}">
+</head>
+<body>
+<h2>Agregar Nuevo Cliente</h2>
+<form>
+  <label for="nombre">Nombre:</label>
+  <input type="text" id="nombre" name="nombre">
+  <br>
+
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="email">
+  <br>
+
+  <label for="telefono">Teléfono:</label>
+  <input type="text" id="telefono" name="telefono">
+  <br>
+
+  <button type="button">Agregar Cliente</button> <!-- No envía datos -->
+</form>
+
+</body>
+</html>
