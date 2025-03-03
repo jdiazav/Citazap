@@ -7,87 +7,152 @@ body {
     padding: 0;
 }
 
-/* Contenedor del formulario */
-.form-container {
-    background: white;
-    padding: 30px;
-    width: 400px;
-    margin: 50px auto;
-    border-radius: 10px;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
-}
-
-/* Pasos del formulario */
-.step-indicator {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.step {
-    width: 35px;
-    height: 35px;
-    line-height: 35px;
-    border-radius: 50%;
-    background-color: #d3d3d3;
+/* Hero Section */
+.hero {
+    background: #283593;
     color: white;
-    font-weight: bold;
-    margin: 0 10px;
+    padding: 60px 20px;
     text-align: center;
 }
 
-.step.active {
-    background-color: #3f51b5;
-    border: 3px solid #aab5ff;
-}
-
-/* Estilo de los campos */
-label {
-    display: block;
-    text-align: left;
+.logo {
+    font-size: 40px;
     font-weight: bold;
-    margin: 10px 0 5px;
+    background-color: white;
+    color: #283593;
+    padding: 15px 30px;
+    border-radius: 15px;
+    display: inline-block;
+    margin-bottom: 10px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
 }
 
-input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
-    font-size: 16px;
+.hero h1 {
+    font-size: 35px;
+    margin: 15px 0;
+}
+
+.hero p {
+    font-size: 18px;
+    opacity: 0.9;
+    margin-bottom: 20px;
+}
+
+.btn {
+    background: #ffffff;
+    color: #283593;
+    padding: 14px 28px;
+    border-radius: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 20px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.btn:hover {
+    background: #1A237E;
+    color: white;
+    transform: scale(1.05);
+}
+
+/* Beneficios */
+.benefits {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    padding: 50px 20px;
+}
+
+.benefit {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    text-align: center;
+    width: 280px;
+    box-shadow: 0px 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.benefit:hover {
+    transform: translateY(-5px);
+}
+
+.benefit i {
+    font-size: 40px;
+    color: #283593;
     margin-bottom: 15px;
 }
 
-/* Botones */
-.button-group {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 20px;
+/* Testimonios */
+.testimonials {
+    background: #E3E3FF;
+    padding: 50px 20px;
 }
 
-button {
-    padding: 12px 24px;
-    border: none;
-    border-radius: 5px;
-    font-weight: bold;
+.testimonials h2 {
+    margin-bottom: 20px;
+    font-size: 28px;
+}
+
+.testimonial {
+    background: white;
+    padding: 20px;
+    margin: 15px auto;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial p {
     font-size: 16px;
-    cursor: pointer;
+    font-style: italic;
+    color: #333;
 }
 
-button.primary {
-    background-color: #3f51b5;
+/* CTA Final */
+.cta {
+    padding: 60px 20px;
+    background: #283593;
     color: white;
 }
 
-button.secondary {
-    background-color: white;
-    color: #3f51b5;
-    border: 2px solid #3f51b5;
+.cta h2 {
+    font-size: 28px;
 }
 
-button.secondary:hover {
-    background-color: #e0e0e0;
+/* Footer */
+footer {
+    background: #1A237E;
+    color: white;
+    padding: 15px;
+    font-size: 14px;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    .benefits {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .benefit {
+        width: 90%;
+        max-width: 350px;
+    }
+
+    .testimonial {
+        width: 90%;
+    }
+
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    .btn {
+        padding: 12px 24px;
+    }
 }

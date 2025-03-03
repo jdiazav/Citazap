@@ -33,7 +33,7 @@
                 <tbody>
                 <tr th:each="cita : ${agenda}">
                     <td><i class="fas fa-clock icon"></i><span th:text=" ${cita.fechaHora}"></span></td>
-                    <td><i class="fas fa-user icon"></i><span th:text=" ${cita.clienteId}"></span></td>
+                    <td><i class="fas fa-user icon"></i><span th:text=" ${cita.cliente}"></span></td>
                     <td><i class="fas fa-file-alt icon"></i><span th:text=" ${cita.descripcion}"></span></td>
                 </tr>
                 </tbody>

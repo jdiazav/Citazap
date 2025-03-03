@@ -3,25 +3,28 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nueva Cita</title>
-  <link rel="icon" type="image/png" href="/favicon.png">
+  <title>Agendar Cita</title>
   <link rel="stylesheet" th:href="@{/css/styles.css}">
 </head>
 <body>
-<h2>Agregar Nueva Cita</h2>
-<form th:action="@{/citas/agregar}" method="post">
-  <label for="cliente">Nombre del cliente:</label>
-  <textarea id="cliente" name="cliente"></textarea>
-  <br>
-  <label for="fechaHora">Fecha y Hora:</label>
-  <input type="datetime-local" id="fechaHora" name="fechaHora">
-  <br>
+<h2>Agendar Nueva Cita</h2>
+<form th:action="@{'/usuarios/' + ${usuarioId} + '/citas'}" method="post">
+  <label>Descripción:</label>
+  <label>
+    <input type="text" name="descripcion" required th:value="${cita.descripcion != null ? cita.descripcion : ''}">
+  </label>
 
-  <label for="descripcion">Descripción:</label>
-  <textarea id="descripcion" name="descripcion"></textarea>
-  <br>
+  <label>Fecha y Hora:</label>
+  <label>
+    <input type="datetime-local" name="fechaHora" required th:value="${cita.fechaHora != null ? cita.fechaHora : ''}">
+  </label>
 
-  <button type="button">Agregar Cita</button>
+  <label>Cliente:</label>
+  <label>
+    <input type="text" name="cliente" required th:value="${cita.cliente != null ? cita.cliente : ''}">
+  </label>
+
+  <button type="submit">Agendar Cita</button>
 </form>
 </body>
 </html>

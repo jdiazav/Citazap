@@ -9,20 +9,26 @@
 </head>
 <body>
 <h2>Agregar Nuevo Cliente</h2>
-<form>
-  <label for="nombre">Nombre:</label>
-  <input type="text" id="nombre" name="nombre">
-  <br>
 
-  <label for="email">Email:</label>
-  <input type="email" id="email" name="email">
-  <br>
+<form th:action="@{'/usuarios/' + ${usuarioId}+ '/clientes'}" method="POST">
 
-  <label for="telefono">Teléfono:</label>
-  <input type="text" id="telefono" name="telefono">
-  <br>
+  <!-- ID del cliente (generado en el backend) -->
+  <label>Nombre:</label>
+  <label>
+    <input type="text" name="nombre" required th:value="${cliente != null ? cliente.nombre : ''}">
+  </label>
 
-  <button type="button">Agregar Cliente</button> <!-- No envía datos -->
+  <label>Email:</label>
+  <label>
+    <input type="email" name="email" required th:value="${cliente != null ? cliente.email : ''}">
+  </label>
+
+  <label>Teléfono:</label>
+  <input type="tel" name="telefono" required
+         pattern="[0-9]{9,15}" title="Debe contener entre 9 y 15 números"
+         th:value="${cliente != null ? cliente.telefono : ''}">
+
+  <button type="submit">Agregar Cliente</button>
 </form>
 
 </body>

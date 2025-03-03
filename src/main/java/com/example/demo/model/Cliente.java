@@ -28,6 +28,11 @@ public class Cliente {
         this.email = email;
         this.telefono = telefono;
     }
+    public Cliente(String nombre, String email, String telefono) {
+        this.nombre = nombre;
+        this.email = email;
+        this.telefono = telefono;
+    }
 
     public Cliente(String nombre, String telefono) {
         this.nombre = nombre;

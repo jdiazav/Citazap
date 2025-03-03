@@ -1,5 +1,6 @@
 package com.example.demo.service;
 
+import com.example.demo.model.Cita;
 import com.example.demo.model.Cliente;
 import com.example.demo.model.Usuario;
 import com.example.demo.repository.UsuarioRepository;
@@ -34,5 +35,28 @@ public class UsuarioService {
             }
         }
         return null;
+    }
+
+    public Usuario agregarCliente(ObjectId usuarioId, Cliente cliente) {
+        Optional<Usuario> usuarioOpt = usuarioRepository.findById(usuarioId);
+        if (usuarioOpt.isPresent()) {
+            Usuario usuario = usuarioOpt.get();
+            usuario.getClientes().add(cliente);
+            return usuarioRepository.save(usuario);
+        } else {
+            throw new RuntimeException("Usuario no encontrado");
+        }
+    }
+
+    public Usuario agregarCita(ObjectId usuarioId, Cita cita) {
+        Optional<Usuario> usuarioOpt = usuarioRepository.findById(usuarioId);
+        if (usuarioOpt.isPresent()) {
+            Usuario usuario = usuarioOpt.get();
+            usuario.getAgenda().add(cita);
+            return usuarioRepository.save(usuario);
+        }
+        else {
+            throw new RuntimeException("Usuario no encontrado");
+        }
     }
 }
